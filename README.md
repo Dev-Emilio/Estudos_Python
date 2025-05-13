@@ -1,2 +1,3 @@
 # Estudos_Python
-Exercícios feitos em Python
+### _Lista de exercicios das aulas do Professor Gustavo Guanabara_
+`Exercícios em Python`
