@@ -1,15 +1,22 @@
 from Ex115.lib.interface import *
+from Ex115.lib.arquivo import *
 from time import sleep
 
+arq = 'cursoemvideo.txt'
+
+if not arquivoExiste(arq):
+    criarArquivo(arq)
+
 while True:
-    resposta = menu(['Criar Arquivo', 'Cadastrar Pessoas', 'Listar Pessoas', 'Sair do Sistema'])
+    resposta = menu(['Listar Pessoas', 'Cadastrar Pessoas', 'Sair do Sistema'])
     if resposta == 1:
-        cabecalho('Opção 1')
+        lerArquivo(arq)
     elif resposta == 2:
-        cabecalho('Opção 2')
+        cabecalho('NOVO CADASTRO')
+        nome = str(input('Nome: '))
+        idade = leiaInt('Idade: ')
+        cadastrar(arq, nome, idade)
     elif resposta == 3:
-        cabecalho('Opção 3')
-    elif resposta == 4:
         cabecalho('Saindo do sistema ... Volte sempre')
         break
     else:
